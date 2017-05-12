@@ -4,6 +4,7 @@ import gov.nasa.data.UsersRepository;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 
 public class UsersResource {
 
@@ -11,5 +12,7 @@ public class UsersResource {
     UsersRepository database;
 
     @GET
+
+    @POST
 
 }
