@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JournalCatBot.iml" filepath="$PROJECT_DIR$/.idea/modules/JournalCatBot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JournalCatBot_endpointsSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/JournalCatBot_endpointsSrc.iml" group="JournalCatBot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JournalCatBot_functionalTest.iml" filepath="$PROJECT_DIR$/.idea/modules/JournalCatBot_functionalTest.iml" group="JournalCatBot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JournalCatBot_main.iml" filepath="$PROJECT_DIR$/.idea/modules/JournalCatBot_main.iml" group="JournalCatBot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JournalCatBot_test.iml" filepath="$PROJECT_DIR$/.idea/modules/JournalCatBot_test.iml" group="JournalCatBot" />
+    </modules>
+  </component>
+</project>

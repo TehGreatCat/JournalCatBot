@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="JournalCatBot_endpointsSrc" target="1.7" />
+      <module name="JournalCatBot_functionalTest" target="1.7" />
+      <module name="JournalCatBot_main" target="1.7" />
+      <module name="JournalCatBot_test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

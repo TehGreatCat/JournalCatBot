@@ -1,0 +1,75 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.40'
+    }
+}
+
+group 'gov.nasa'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'appengine'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+gretty {
+    httpPort = 8080
+    contextPath = '/'
+}
+
+appengine {
+    httpPort = 8888
+    downloadSdk = true
+    appcfg {
+        oauth2 = true
+        logs {
+            severity = 0
+        }
+    }
+    app {
+        id = 'banking-edu-androidclub'
+        version = 'v1'
+    }
+    enhancer {
+        version = 'v2'
+    }
+    jvmFlags = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000']
+}
+
+dependencies {
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    compile 'com.googlecode.objectify:objectify:5.1.13'
+    compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.38'
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.51'
+
+    compile 'org.glassfish.jersey.core:jersey-server:2.23.2'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.23.2'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.7.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.7.0'
+    compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.4'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.0'
+    compile 'ai.api:libai:1.4.8'
+    compile 'ai.api:sdk:2.0.5@aar'
+
+
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.0-alpha4'
+
+    compile group: 'org.telegram', name: 'telegrambots', version: '2.4.4.5'
+
+    compile 'org.slf4j:slf4j-jdk14:1.7.21'
+    testCompile 'junit:junit:4.12'
+}
+
