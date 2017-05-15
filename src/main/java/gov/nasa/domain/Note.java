@@ -21,12 +21,12 @@ public class Note {
     private String text;
 
     @JsonProperty("Image")
-    private Image image;
+    private String image;
 
     @JsonProperty("TimeStamp")
     private String timestamp;
 
-    public Note(String text, Image image, String timestamp) {
+    public Note(String text, String image, String timestamp) {
         this.text = text;
         this.image = image;
         this.timestamp = timestamp;
@@ -56,11 +56,11 @@ public class Note {
         this.text = text;
     }
 
-    public Image getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

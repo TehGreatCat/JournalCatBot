@@ -16,7 +16,7 @@ public class NotesDatastore implements NotesRepository {
     }
 
     @Override
-    public String createNote(Key<?> userKey, String text, String timestamp, Image image) {
+    public String createNote(Key<?> userKey, String text, String timestamp, String image) {
         Note note = new Note(text, image, timestamp);
         note.setCreator(userKey);
         Result<Key<Note>> result = ofy().save().entity(note);
@@ -33,12 +33,17 @@ public class NotesDatastore implements NotesRepository {
     }
 
     @Override
+    public Iterable<Note> getNoteByDate(String timestamp, Key<?> userKey) {
+        return ofy().load().type(Note.class).ancestor(userKey).filter("timestamp",timestamp).list();
+    }
+
+    @Override
     public void deleteNote(String id) throws NoteNotFoundException {
         ofy().delete().entity(getNote(id)); // Как оформить result?
     }
 
     @Override
-    public String updateNote(String id, String text, String timestamp, Image image) throws NoteNotFoundException {
+    public String updateNote(String id, String text, String timestamp, String image) throws NoteNotFoundException {
         Note note = new Note(text, image, timestamp);
         ofy().save().toEntity(note);        //?????????????????
         return null;

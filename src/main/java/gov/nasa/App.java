@@ -1,7 +1,9 @@
 package gov.nasa;
 
+import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.googlecode.objectify.ObjectifyService;
 import gov.nasa.Telegram.MainBot;
+import gov.nasa.config.ComponentBinder;
 import gov.nasa.config.StorageBinder;
 import gov.nasa.domain.Note;
 import gov.nasa.domain.User;
@@ -20,7 +22,12 @@ public class App extends ResourceConfig {
         ObjectifyService.register(Note.class);
 
         register(new StorageBinder());
+        register(new ComponentBinder());
 
+        register(JacksonJaxbJsonProvider.class);
+        register(UsersResource.class);
+        register(NotesResource.class);
+        register(AuthFeature.class);
 
 
         // Регистрация Бота и контекста

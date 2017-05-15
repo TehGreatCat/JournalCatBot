@@ -9,13 +9,15 @@ public interface NotesRepository {
 
     Iterable<Note> getNotes(Key<?> userKey);
 
-    String createNote(Key<?> userKey, String text, String timestamp, Image image);
+    String createNote(Key<?> userKey, String text, String timestamp, String image);
 
     Note getNote (String id) throws NoteNotFoundException;
 
+    Iterable<Note> getNoteByDate (String timestamp, Key<?> userKey);
+
     void deleteNote(String id) throws NoteNotFoundException;
 
-    String updateNote(String id, String text, String timestamp, Image image) throws NoteNotFoundException;
+    String updateNote(String id, String text, String timestamp, String image) throws NoteNotFoundException;
 
     class NoteNotFoundException extends Exception {}
 }
