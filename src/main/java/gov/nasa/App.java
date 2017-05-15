@@ -21,6 +21,7 @@ public class App extends ResourceConfig {
         ObjectifyService.register(User.class);
         ObjectifyService.register(Note.class);
 
+        //ayy lmao
         register(new StorageBinder());
         register(new ComponentBinder());
 
